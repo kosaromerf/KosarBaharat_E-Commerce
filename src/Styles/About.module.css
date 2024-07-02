@@ -1,32 +1,85 @@
-/* .page {
+.page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../assets/about.jpg");
-    background-size: cover
+    background-image: linear-gradient(125deg, #050505, #202020);
 }
 
 .container {
-    width: 50%;
-    height: 70vh;
-    border: 1px solid black;
-    border-radius: 100px;
-    padding: 50px;
-    font-size: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-}
-
-
-.container p img {
-    height: 300px;
-    width: auto;
-    float: right;
+    --b: 5px;
+    --c: red;
+    --w: 30%;
+    width: 90vw;
+    border: var(--b) solid #0000;
+    --_g: #0000 90deg, var(--c) 0;
+    --_p: var(--w) var(--w) border-box no-repeat;
+    background:
+        conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 / var(--_p),
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
+    padding: 1rem;
 }
 
 .header {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-} */
+    color: white;
+    text-align: center;
+    margin: 1rem;
+}
+
+.text {
+    color: #f0f0f0dd;
+    text-align: start;
+    text-indent: 2rem;
+    margin: 1rem;
+}
+
+.text>span {
+    font-weight: 900;
+}
+
+.image {
+    display: none;
+}
+
+@media only screen and (min-width: 767px) {
+    .image {
+        display: block;
+        float: right;
+        height: auto;
+        width: 50%;
+        margin-left: 1rem;
+        border-radius: 30px;
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    .container {
+        width: 70vw;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+    .header {
+        font-size: 2.4rem;
+    }
+
+    .text {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .container {
+        width: 60vw;
+    }
+
+    .header {
+        font-size: 2.5rem;
+    }
+
+    .text {
+        font-size: 1.5rem;
+    }
+}
