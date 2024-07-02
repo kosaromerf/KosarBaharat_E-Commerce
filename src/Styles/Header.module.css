@@ -1,0 +1,64 @@
+.main {
+    height: 7vh;
+    background-color: #050505;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.logo {
+    height: 100%;
+    width: auto;
+
+}
+
+
+@media only screen and (min-width: 767px) {
+
+    .main {
+        overflow: hidden;
+
+    }
+
+}
+
+
+
+
+
+/* 
+
+.link {
+    width: 8vw;
+    padding: 0 0 0 2%;
+    margin: 0
+}
+
+
+.navbar {
+
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem
+}
+
+.page {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+
+.navbar * {
+    color: rgb(120, 159, 243);
+    text-decoration: none;
+    text-shadow: 10px 10px 5px black;
+    font-family: Georgia, 'Times New Roman', Times, serif
+} */

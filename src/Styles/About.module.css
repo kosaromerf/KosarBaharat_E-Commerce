@@ -1,0 +1,32 @@
+/* .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../assets/about.jpg");
+    background-size: cover
+}
+
+.container {
+    width: 50%;
+    height: 70vh;
+    border: 1px solid black;
+    border-radius: 100px;
+    padding: 50px;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+
+.container p img {
+    height: 300px;
+    width: auto;
+    float: right;
+}
+
+.header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+} */
