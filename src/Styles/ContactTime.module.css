@@ -1,0 +1,15 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem
+}
+
+.label {
+    font-weight: 900;
+    text-align: center;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}

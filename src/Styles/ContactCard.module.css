@@ -1,0 +1,33 @@
+.part {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh
+}
+
+.label {
+    text-align: center;
+}
+
+.information {
+    text-align: center;
+    font-weight: 900;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.clipBoard {
+    font-size: 1rem;
+}
+
+.clipBoardBtn {
+    background-color: transparent;
+    color: white;
+    margin-left: 1rem;
+}
