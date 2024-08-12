@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../Styles/Contact.module.css";
-import Header from "./Header";
 import { useState, useEffect } from "react";
 import ContactAdress from "./ContactAdress";
 import ContactTime from "./ContactTime";
@@ -110,7 +109,6 @@ const Contact = () => {
 
   return (
     <main>
-      <Header></Header>
       <div className={styles.page}>
         <div className={styles.container}>
           <nav className={styles.navigation}>

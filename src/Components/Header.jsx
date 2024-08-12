@@ -1,10 +1,13 @@
-import logo from "../assets/logo.jpeg";
+import React, { useContext } from "react";
 import styles from "../Styles/Header.module.css";
-import React from "react";
-import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import { CartContext } from "../utils/CartContext";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.jpeg";
 
 const Header = () => {
+  const { inCart, setInCart } = useContext(CartContext);
+
   return (
     <header className={styles.main}>
       <Link to="/">
@@ -16,7 +19,7 @@ const Header = () => {
           className={styles.logo}
         />
       </Link>
-      <NavBar />
+      <NavBar inCart={inCart} setInCart={setInCart} />
     </header>
   );
 };

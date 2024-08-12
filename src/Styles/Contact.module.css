@@ -1,9 +1,10 @@
 .page {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     height: 100vh;
     background-image: linear-gradient(125deg, #050505, #202020);
+    padding-top: 10vh;
 }
 
 .container {
@@ -107,6 +108,9 @@
 }
 
 @media only screen and (min-width: 767px) {
+    .page {
+        padding-top: 15vh
+    }
 
     .image {
         display: block;

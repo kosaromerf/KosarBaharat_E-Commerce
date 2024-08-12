@@ -1,39 +1,50 @@
 import React from "react";
 import styles from "../Styles/NavBar.module.css";
-import Button from "./Button";
 import { Link } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useState, useEffect } from "react";
+import logo from "../assets/logo.jpeg";
+import { FaPhone } from "react-icons/fa6";
+import { FaShop } from "react-icons/fa6";
+import { FaInfoCircle } from "react-icons/fa";
+import CartDisplay from "./CartDisplay";
 
-const NavBar = () => {
-  const [dropdownMenu, setDropdownMenu] = useState(false);
-
+const NavBar = ({ inCart, setInCart }) => {
   return (
     <nav className={styles.main}>
-      <Link to="/cart" className={styles.cart}>
-        <BsCart4 />
-      </Link>
-      <button
-        className={styles.hamburger}
-        onClick={() => setDropdownMenu(!dropdownMenu)}
-      >
-        {!dropdownMenu ? <GiHamburgerMenu /> : " X"}
-      </button>
-      <div
-        className={`${styles.collapseNav} ${dropdownMenu ? styles.show : ""}`}
-      >
-        <Link className={styles.navItem} to="/about">
-          About
+      <div className={styles.smallNavBar}>
+        <Link to="/">
+          <img
+            src={logo}
+            alt="logo"
+            width={80}
+            height={45}
+            className={styles.smallNavItem}
+          />
         </Link>
-        <Link className={styles.navItem} to="/shop">
-          Shop
+        <Link className={styles.smallNavItem} to="/shop">
+          <FaShop />
         </Link>
-        <Link className={styles.navItem} to="/contact">
-          Contact
+        <Link to="/cart" className={styles.smallNavItem}>
+          <BsCart4 />
+          <div className={styles.numberDisplaySmall}>{inCart.length}</div>
+        </Link>
+        <Link className={styles.smallNavItem} to="/about">
+          <FaInfoCircle />
+        </Link>
+
+        <Link className={styles.smallNavItem} to="/contact">
+          <FaPhone />
         </Link>
       </div>
+
       <div className={styles.navBar}>
+        <div className={styles.cart}>
+          <BsCart4 />
+          <div className={styles.numberDisplayBig}>{inCart.length}</div>
+          <div className={styles.cartModal}>
+            <CartDisplay inCart={inCart} setInCart={setInCart} />
+          </div>
+        </div>
         <Link className={styles.navItem} to="/about">
           About
         </Link>

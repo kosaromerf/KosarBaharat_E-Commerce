@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "../Styles/About.module.css";
 import background from "../assets/background.jpg";
-import Header from "./Header";
+
 const About = () => {
   return (
     <main>
-      <Header></Header>
       <div className={styles.page}>
         <div className={styles.container}>
           <h1 className={styles.header}>About Us</h1>

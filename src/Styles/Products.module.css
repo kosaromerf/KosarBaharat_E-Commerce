@@ -1,101 +1,54 @@
-/* .page {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    background-image: url("../assets/about.jpg");
-    background-size: cover
-}
-
-
-.header {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-}
-
-.filterBar {
-    position: fixed;
-    width: 10%;
-    z-index: 1;
-    height: 70%;
-    background-color: cornsilk;
-    left: 1%;
-    top: 15%;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-
-    justify-content: space-between;
-    padding: 2% 1% 2% 1%;
-}
-
-
-.market {
-
-    height: 80%;
-    border: 1px dashed red;
-    border-radius: 20px;
-    flex: 0.70;
-    background-color: cornsilk;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-evenly;
-    margin-top: 7%;
+.container {
+    width: 90vw;
+    height: 80vh;
     overflow: scroll;
-    padding: 10px 1% 10px 1%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 2% 2%;
+    border: 2px solid #80808011;
+    padding: 1% 1%
 }
 
 
-
-
-.section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 3px;
+@media only screen and (min-width: 767px) {
+    .container {
+        width: 67vw;
+        margin-left: 31vw;
+        align-self: flex-start;
+    }
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-    margin-right: 5px;
+
+@media only screen and (min-width: 991px) {
+
+    .container {
+        width: 72vw;
+        margin-left: 26vw;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
-.section input[type="search"] {
-    border-radius: 20px;
-    text-indent: 5%;
-    border: 1px solid gray;
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 77vw;
+        margin-left: 21vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 
-.search {
-    margin-top: 2%;
-    border-radius: 20px;
-    width: 50%;
-    align-self: center;
-    background-color: chartreuse;
-    border: 1px solid gray;
-}
-
-.minmax {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
+@media only screen and (min-width: 1400px) {
+    .container {
+        width: 80vw;
+        margin-left: 18vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
 
 }
 
-.minmax input {
-    width: 40%;
-    text-indent: 5px;
+@media only screen and (min-width: 1915px) {
+    .container {
+        width: 82vw;
+        margin-left: 16vw;
+    }
 }
-
-.filter {
-    width: 90%;
-    align-self: center;
-    height: 5%;
-    border-radius: 20px;
-    background-color: aquamarine;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: 1px solid gray;
-} */
