@@ -133,4 +133,10 @@
     .cart:focus .cartModal {
         height: 500px;
     }
+
+    .toCart {
+        text-decoration: none;
+        color: white;
+    }
+
 }

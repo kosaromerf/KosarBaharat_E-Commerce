@@ -1,0 +1,190 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 93vh;
+    background-image: linear-gradient(125deg, #050505, #202020);
+    color: white;
+    width: 100vw;
+    overflow: scroll;
+}
+
+.modal {
+    background-color: #000000dd;
+    border: 3px solid #ffffff22;
+    display: flex;
+    flex-direction: column;
+    max-height: 70vh;
+    margin: 1rem
+}
+
+h2 {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.modalList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid gray;
+    overflow: scroll;
+    margin: 0.5rem;
+}
+
+.emptyCart {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.modalItem {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalItem>div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem
+}
+
+.paymentBtn {
+    display: none
+}
+
+.total {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.deleteBtn {
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #00000088;
+    gap: 1rem;
+    margin: 1rem
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    gap: 0.5rem
+}
+
+.input>input,
+.input>textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid #ff000099;
+    text-indent: 0.5rem;
+    color: #ffffffaa;
+    font-size: 2vh;
+}
+
+.input>input:focus,
+.input>textarea:focus {
+    background-color: transparent;
+    border: 3px solid #ff0000;
+    outline: 0;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.input>textarea {
+    resize: none;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #00000088;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.infoCard {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    line-break: anywhere;
+}
+
+.orderBtn {
+    width: 100%;
+    background-color: #ff0000aa;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 900;
+}
+
+@media only screen and (min-width: 767px) {
+
+    .main {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        margin-top: 7vh;
+    }
+
+    .order {
+        max-height: 93vh;
+        overflow: scroll;
+    }
+
+    .modal {
+        max-height: 70vh;
+    }
+
+    .form {
+        gap: 0.5rem;
+    }
+
+    .detail {
+        justify-content: space-between;
+        height: fit-content;
+        align-self: center;
+        min-height: 40vh;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .main {
+        grid-template-columns: 4fr 2fr;
+        padding: 0 10vw 0 10vw;
+        gap: 5vw
+    }
+}

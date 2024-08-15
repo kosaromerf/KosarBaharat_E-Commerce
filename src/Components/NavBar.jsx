@@ -39,7 +39,9 @@ const NavBar = ({ inCart, setInCart }) => {
 
       <div className={styles.navBar}>
         <div className={styles.cart}>
-          <BsCart4 />
+          <Link className={styles.toCart} to="/cart">
+            <BsCart4 />
+          </Link>
           <div className={styles.numberDisplayBig}>{inCart.length}</div>
           <div className={styles.cartModal}>
             <CartDisplay inCart={inCart} setInCart={setInCart} />
