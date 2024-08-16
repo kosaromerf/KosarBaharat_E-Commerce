@@ -5,7 +5,6 @@
 
 .navBar {
     display: none;
-
 }
 
 .smallNavBar {
@@ -15,7 +14,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
-
 }
 
 .smallNavItem {
@@ -55,8 +53,6 @@
     overflow: hidden;
     max-height: 70vh;
 }
-
-
 
 @media only screen and (min-width: 767px) {
 
@@ -126,7 +122,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     .cart:hover .cartModal,
@@ -138,5 +133,4 @@
         text-decoration: none;
         color: white;
     }
-
 }

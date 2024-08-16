@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../Styles/Products.module.css";
 import Card from "./Card";
+import PropTypes from "prop-types";
 
 const Products = ({ products, inCart, setInCart }) => {
   return (
@@ -19,6 +20,12 @@ const Products = ({ products, inCart, setInCart }) => {
       ))}
     </div>
   );
+};
+
+Products.propTypes = {
+  products: PropTypes.array.isRequired,
+  inCart: PropTypes.array.isRequired,
+  setInCart: PropTypes.func.isRequired,
 };
 
 export default Products;

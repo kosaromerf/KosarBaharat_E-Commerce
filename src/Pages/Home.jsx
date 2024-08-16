@@ -2,9 +2,9 @@ import React from "react";
 import LazyLoad from "react-lazyload";
 import styles from "../Styles/Home.module.css";
 import { Link } from "react-router-dom";
-import smallBg from "../assets/smallBG.jpg";
-import rectBg from "../assets/rectBG.jpg";
-import heroBg from "../assets/heroBG.jpg";
+import smallBg from "../Assets/smallBG.jpg";
+import rectBg from "../Assets/rectBG.jpg";
+import heroBg from "../Assets/heroBG.jpg";
 
 const Home = () => {
   return (

@@ -2,11 +2,12 @@ import React from "react";
 import styles from "../Styles/NavBar.module.css";
 import { Link } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
-import logo from "../assets/logo.jpeg";
+import logo from "../Assets/logo.jpeg";
 import { FaPhone } from "react-icons/fa6";
 import { FaShop } from "react-icons/fa6";
 import { FaInfoCircle } from "react-icons/fa";
 import CartDisplay from "./CartDisplay";
+import PropTypes from "prop-types";
 
 const NavBar = ({ inCart, setInCart }) => {
   return (
@@ -59,6 +60,11 @@ const NavBar = ({ inCart, setInCart }) => {
       </div>
     </nav>
   );
+};
+
+NavBar.propTypes = {
+  inCart: PropTypes.array.isRequired,
+  setInCart: PropTypes.func.isRequired,
 };
 
 export default NavBar;

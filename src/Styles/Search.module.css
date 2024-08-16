@@ -4,7 +4,6 @@
     height: 4vh;
     display: flex;
     padding: 0 1rem;
-
 }
 
 .searchInput {
@@ -18,13 +17,11 @@
 }
 
 .searchInput:focus {
-
     background-color: transparent;
     border: 3px solid #ff0000;
     outline: 0;
     color: #ffffff;
     background-color: #000000;
-
 }
 
 .searchBtn {
@@ -34,7 +31,6 @@
     background-color: #ffffffaa;
     padding: 0 0.3rem;
     border: 0;
-
 }
 
 .searchBtn:hover {
@@ -43,6 +39,7 @@
 
 
 @media only screen and (min-width: 767px) {
+
     .searchBar {
         margin-top: 9vh;
         width: 60%;

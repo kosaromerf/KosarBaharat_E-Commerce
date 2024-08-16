@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Styles/About.module.css";
-import background from "../assets/background.jpg";
+import background from "../Assets/background.jpg";
 
 const About = () => {
   return (
@@ -12,7 +12,7 @@ const About = () => {
             <img
               className={styles.image}
               src={background}
-              alt="image of some spices"
+              alt="image from a spice shop"
               width={50}
               height={50}
             />

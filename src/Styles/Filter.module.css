@@ -167,7 +167,6 @@
     }
 
     .bigSort {
-
         display: grid;
         height: 3vh;
         grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../Styles/ContactTime.module.css";
+import PropTypes from "prop-types";
 
 const ContactTime = ({ label, weekdays, saturday, sunday }) => {
   return (
@@ -21,4 +22,10 @@ const ContactTime = ({ label, weekdays, saturday, sunday }) => {
   );
 };
 
+ContactTime.propTypes = {
+  label: PropTypes.string,
+  weekdays: PropTypes.string.isRequired,
+  saturday: PropTypes.string.isRequired,
+  sunday: PropTypes.string.isRequired,
+};
 export default ContactTime;

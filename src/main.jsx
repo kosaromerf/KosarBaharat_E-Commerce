@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./Components/Home";
-import Cart from "./Components/Cart";
-import Shop from "./Components/Shop";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
+import Home from "./Pages/Home";
+import Cart from "./Pages/Cart";
+import Shop from "./Pages/Shop";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 import Layout from "./Components/Layout";
-import CartProvider from "./utils/CartContext";
+import CartProvider from "./Context/CartContext";
 import "./index.css";
 
-// ----------------------------------------------------------------------
+// Page routing
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-// ----------------------------------------------------------------------
+// Root
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CartProvider>

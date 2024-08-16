@@ -3,13 +3,19 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "../Styles/CartDisplay.module.css";
 import { MdDeleteForever } from "react-icons/md";
+import PropTypes from "prop-types";
 
 const CartDisplay = ({ inCart, setInCart }) => {
+  //Varible to hold total cost of the items
   const [total, setTotal] = useState(0);
+
+  //Deleting items from the cart
   const deleteItem = (item) => {
     const tempCart = [...inCart].filter((e) => e.name !== item.name);
     setInCart(tempCart);
   };
+
+  //Displaying items in Cart as a list
   const modalDisplay = [...inCart].map((e, i) => (
     <li className={styles.modalItem} key={i}>
       <div>
@@ -30,6 +36,7 @@ const CartDisplay = ({ inCart, setInCart }) => {
     </li>
   ));
 
+  //Changing total number every time items in cart changes
   useEffect(() => {
     setTotal([...inCart].reduce((tot, e) => e.price * e.amount + tot, 0));
   }, [inCart]);
@@ -52,6 +59,11 @@ const CartDisplay = ({ inCart, setInCart }) => {
       </Link>
     </div>
   );
+};
+
+CartDisplay.propTypes = {
+  inCart: PropTypes.array.isRequired,
+  setInCart: PropTypes.func.isRequired,
 };
 
 export default CartDisplay;

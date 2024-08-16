@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import styles from "../Styles/Filter.module.css";
-import productList from "../assets/productList";
+import productList from "../Assets/productList";
 import { useState } from "react";
 import { FaSortAmountDown } from "react-icons/fa";
 import { FaSortAmountUp } from "react-icons/fa";
 import { FaSortAlphaDown } from "react-icons/fa";
 import { FaSortAlphaDownAlt } from "react-icons/fa";
 import { FaFilter } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 const Filter = ({ sortProducts }) => {
+  //Varible to hold conditions of filtering
   const [conditions, setConditions] = useState({
     name: "",
     category: ["spice", "herb", "tea", "seed"],
@@ -16,31 +18,42 @@ const Filter = ({ sortProducts }) => {
     availability: false,
   });
 
-  /*  const [inCart, setInCart] = useState([{ name: "" }]);  */
-
+  //Varible to determine sorting menu open or close
   const [sortMenu, setSortMenu] = useState(false);
+
+  //Varible to hold which collapsable filtering sublabels are open
   const [subLabel, setSubLabel] = useState([false, false, false]);
+
+  //Varible to determine filtering menu open or close
   const [filterMenu, setFilterMenu] = useState(false);
+
+  //Varible to determine the sorting icon suitable
   const [icon, setIcon] = useState(<FaSortAlphaDown />);
+
+  //Varible to hold sorting choice
   const [sortMethod, setSortMethod] = useState("AZ");
 
+  //Sorting and filtering regarding to choices made and closing the dropdown menus
   const sortAndFilter = (sortMethod) => {
     setSortMethod(sortMethod);
     let filteredProducts = filterAndClose();
     sortAndClose(sortMethod, filteredProducts);
   };
 
+  //Filtering regarding to choices made and closing the dropdown menu
   const filterAndClose = () => {
     setFilterMenu(false);
     return mainFilter();
   };
 
+  //Sorting regarding to choices made and closing the dropdown menu
   const sortAndClose = (sortMethod, filteredProducts) => {
     sortProducts(sortMethod, filteredProducts);
     changeIcon(sortMethod);
     setSortMenu(false);
   };
 
+  //Filtering logic
   const mainFilter = () => {
     let filteredProducts = [...productList]
       .filter((e) => conditions.availability === e.available || e.available)
@@ -56,6 +69,7 @@ const Filter = ({ sortProducts }) => {
     return filteredProducts;
   };
 
+  //Changing the sortng icon
   const changeIcon = (sortMethod) => {
     sortMethod == "AZ"
       ? setIcon(<FaSortAlphaDown />)
@@ -65,6 +79,8 @@ const Filter = ({ sortProducts }) => {
       ? setIcon(<FaSortAmountUp />)
       : setIcon(<FaSortAmountDown />);
   };
+
+  //Closing and oppening the sorting dropdown
   useEffect(() => {
     if (!sortMenu) {
       document.getElementById("dropdownSort").style.display = "none";
@@ -73,6 +89,7 @@ const Filter = ({ sortProducts }) => {
     }
   }, [sortMenu]);
 
+  //Closing and opening the filtering dropdown
   useEffect(() => {
     if (!filterMenu) {
       document.getElementById("dropdownFilter").style.display = "none";
@@ -81,6 +98,7 @@ const Filter = ({ sortProducts }) => {
     }
   }, [filterMenu]);
 
+  //Closing and opening the sublablel collapsable filters
   useEffect(() => {
     if (subLabel[0]) {
       document.getElementById("stockFilter").style.display = "none";
@@ -101,6 +119,7 @@ const Filter = ({ sortProducts }) => {
     }
   }, [subLabel]);
 
+  //Changing availability condition
   const availabilityConditionToTrue = () => {
     setConditions({
       ...conditions,
@@ -108,6 +127,7 @@ const Filter = ({ sortProducts }) => {
     });
   };
 
+  //Changing availability condition
   const availabilityConditionToFalse = () => {
     setConditions({
       ...conditions,
@@ -115,6 +135,7 @@ const Filter = ({ sortProducts }) => {
     });
   };
 
+  //Changing category condition
   const categoryConditions = (con) => {
     if (conditions.category.includes(con)) {
       setConditions({
@@ -129,6 +150,7 @@ const Filter = ({ sortProducts }) => {
     }
   };
 
+  //Changing price condition
   const priceCondition = (input) => {
     let tempRange = conditions.priceRange;
     tempRange[input] = !tempRange[input];
@@ -548,6 +570,10 @@ const Filter = ({ sortProducts }) => {
       </div>
     </nav>
   );
+};
+
+Filter.propTypes = {
+  sortProducts: PropTypes.func.isRequired,
 };
 
 export default Filter;

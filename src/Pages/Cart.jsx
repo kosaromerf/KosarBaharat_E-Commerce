@@ -1,27 +1,31 @@
 import React, { useState, useContext, useEffect } from "react";
 import styles from "../Styles/Cart.module.css";
-import productList from "../assets/productList";
-import Filter from "./Filter";
-import Products from "./Products";
-import Search from "./Search";
-import { CartContext } from "../utils/CartContext";
-import CartDisplay from "./CartDisplay";
+import { CartContext } from "../Context/CartContext";
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+  //Variable for holding data from inputs in form
   const [details, setDetails] = useState({
     name: "",
     contact: "",
     address: "",
     notes: "",
   });
+
+  //Getting Items added to cart using useContext
   const { inCart, setInCart } = useContext(CartContext);
+
+  //Varible to hold total cost of the items
   const [total, setTotal] = useState(0);
+
+  //Deleting items from the cart
   const deleteItem = (item) => {
     const tempCart = [...inCart].filter((e) => e.name !== item.name);
     setInCart(tempCart);
   };
+
+  //Displaying items in Cart as a list
   const modalDisplay = [...inCart].map((e, i) => (
     <li className={styles.modalItem} key={i}>
       <div>
@@ -42,10 +46,12 @@ const Cart = () => {
     </li>
   ));
 
+  //Changing total number every time items in cart changes
   useEffect(() => {
     setTotal([...inCart].reduce((tot, e) => e.price * e.amount + tot, 0));
   }, [inCart]);
 
+  //Logic to change details when an input is changed
   const formInput = (item, value) => {
     switch (item) {
       case "name":
@@ -65,9 +71,11 @@ const Cart = () => {
     }
   };
 
+  //After order complated cleaning the cart
   const order = () => {
     setInCart([]);
   };
+
   return (
     <main className={styles.main}>
       <div className={styles.order}>
@@ -79,7 +87,6 @@ const Cart = () => {
             ) : (
               <p className={styles.emptyCart}>There Are No Items In The Cart</p>
             )}
-
             <p className={styles.total}>
               Total : {total}
               <span>&#8378;</span>

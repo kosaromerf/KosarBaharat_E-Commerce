@@ -1,14 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
 import styles from "../Styles/Shop.module.css";
-import productList from "../assets/productList";
-import Filter from "./Filter";
-import Products from "./Products";
-import Search from "./Search";
-import { CartContext } from "../utils/CartContext";
+import productList from "../Assets/productList";
+import Filter from "../Components/Filter";
+import Products from "../Components/Products";
+import Search from "../Components/Search";
+import { CartContext } from "../Context/CartContext";
 
 const Shop = () => {
+  //Getting Items added to cart using useContext
   const { inCart, setInCart } = useContext(CartContext);
+
+  //Getting Items from productsList
   const [products, setProducts] = useState(productList);
+
+  //Varible for holding conditions for search clearing the other filter conditions
   const [conditions, setConditions] = useState({
     name: "",
     category: ["spice", "herb", "tea", "seed"],
@@ -17,6 +22,7 @@ const Shop = () => {
     availability: false,
   });
 
+  //Sorting logic
   const sortProducts = (sortMethod, filteredProducts) => {
     const tempProducts = [...filteredProducts];
     switch (sortMethod) {

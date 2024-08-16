@@ -4,7 +4,8 @@ import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
-import addClipboard from "../utils/addClipboard";
+import addClipboard from "../Utils/addClipboard";
+import PropTypes from "prop-types";
 
 const ContactAdress = ({ label, info, icon, clipBoard }) => {
   return (
@@ -32,6 +33,13 @@ const ContactAdress = ({ label, info, icon, clipBoard }) => {
       </p>
     </div>
   );
+};
+
+ContactAdress.propTypes = {
+  label: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired,
+  icon: PropTypes.bool,
+  clipBoard: PropTypes.bool,
 };
 
 export default ContactAdress;

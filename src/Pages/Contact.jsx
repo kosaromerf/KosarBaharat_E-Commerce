@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../Styles/Contact.module.css";
 import { useState, useEffect } from "react";
-import ContactAdress from "./ContactAdress";
-import ContactTime from "./ContactTime";
+import ContactAdress from "../Components/ContactAdress";
+import ContactTime from "../Components/ContactTime";
 import {
   APIProvider,
   Map,
@@ -11,7 +11,10 @@ import {
 } from "@vis.gl/react-google-maps";
 
 const Contact = () => {
+  // Varible for determinig which tab is open
   const [page, setPage] = useState("phone");
+
+  //Unsuccesful attmep to put a map (i will comeback to this)
   const [markerRef, marker] = useMarkerRef();
 
   useEffect(() => {
@@ -20,10 +23,12 @@ const Contact = () => {
     }
   }, [marker]);
 
+  // Setting the tab open
   const changeInfo = (event) => {
     setPage(event.target.name);
   };
 
+  // Content for phone tab
   const phoneContent = (
     <section className={styles.info}>
       <ContactAdress label={"Contact Name"} info={"Aziz Kosar"} />
@@ -51,6 +56,7 @@ const Contact = () => {
     </section>
   );
 
+  // Content for email tab
   const emailContent = (
     <section className={styles.info}>
       <ContactAdress label={"Contact Name"} info={"Aziz Kosar"} />
@@ -68,6 +74,7 @@ const Contact = () => {
     </section>
   );
 
+  // Content for address tab
   const addressContent = (
     <section className={styles.info}>
       <ContactAdress label={"Owner Name"} info={"Aziz Kosar"} />
@@ -89,6 +96,8 @@ const Contact = () => {
       />
     </section>
   );
+
+  // Content for map tab
   const mapContent = (
     <section className={styles.infoMap}>
       <APIProvider apiKey={"API_KEY"}>

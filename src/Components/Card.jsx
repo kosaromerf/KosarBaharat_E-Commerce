@@ -1,30 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "../Styles/Card.module.css";
+import PropTypes from "prop-types";
 
 const Card = ({ name, price, available, inCart, setInCart, image }) => {
-  const [detail, setDetail] = useState(1);
+  // Unit variable for each card
+  const [unit, setUnit] = useState(1);
 
-  const amountInc = () => {
-    setDetail(detail + 1);
-  };
-
-  const amountDec = () => {
-    if (detail >= 1) {
-      setDetail(detail - 1);
-    } else if (detail == 0) {
-      console.log("Amount is already 0");
+  // Handle amount change
+  const amountChange = (event) => {
+    const allowedChars = /^[1-9\b][0-9\b]*$/;
+    if (event === "increase") {
+      setUnit(unit + 1);
+    } else if (event === "decrease") {
+      if (unit >= 1) {
+        setUnit(unit - 1);
+      } else if (unit == 0) {
+        console.log("Amount is already 0");
+      } else {
+        setUnit(0);
+      }
     } else {
-      setDetail(0);
+      if (event.target.value === "" || allowedChars.test(event.target.value)) {
+        setUnit(event.target.value);
+      }
     }
   };
 
-  const handleChange = (event) => {
-    const allowedChars = /^[0-9\b]+$/;
-    if (event.target.value === "" || allowedChars.test(event.target.value)) {
-      setDetail(event.target.value);
-    }
-  };
-
+  // Add to cart logic
   const addToCart = (name, amount, image, price) => {
     const itemInCart = inCart.find((e) => e.name === name);
     if (itemInCart) {
@@ -55,32 +57,38 @@ const Card = ({ name, price, available, inCart, setInCart, image }) => {
         </p>
       </div>
       <div className={styles.amount}>
-        <button className={styles.decreaseBtn} onClick={amountDec}>
+        <button
+          className={styles.decreaseBtn}
+          onClick={() => amountChange("decrease")}
+        >
           -
         </button>
         <input
           type="text"
-          onChange={handleChange}
+          onChange={() => amountChange(event)}
           placeholder="1"
           className={styles.inputField}
-          value={detail}
+          value={unit}
           min="0"
         />
-        <button className={styles.increaseBtn} onClick={amountInc}>
+        <button
+          className={styles.increaseBtn}
+          onClick={() => amountChange("increase")}
+        >
           +
         </button>
       </div>
       {available ? (
         <button
           className={styles.add}
-          onClick={() => addToCart(name, detail, image, price)}
+          onClick={() => addToCart(name, unit, image, price)}
         >
           <div className={styles.priceResult}>
             <p className={styles.toAdd}>
-              {name}({detail}kg)
+              {name}({unit}kg)
             </p>
             <p className={styles.priceToAdd}>
-              {detail * price}
+              {unit * price}
               <span>&#8378;</span>
             </p>
           </div>
@@ -93,6 +101,15 @@ const Card = ({ name, price, available, inCart, setInCart, image }) => {
       )}
     </div>
   );
+};
+
+Card.propTypes = {
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  available: PropTypes.bool.isRequired,
+  inCart: PropTypes.array.isRequired,
+  setInCart: PropTypes.func.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Card;

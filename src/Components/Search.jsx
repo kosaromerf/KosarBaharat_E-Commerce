@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../Styles/Search.module.css";
-import searchFilter from "../utils/serachFilter";
+import searchFilter from "../Utils/searchFilter";
+import PropTypes from "prop-types";
 
 const Search = ({ productList, setProducts, conditions, setConditions }) => {
   return (
@@ -26,6 +27,13 @@ const Search = ({ productList, setProducts, conditions, setConditions }) => {
       </label>
     </div>
   );
+};
+
+Search.propTypes = {
+  productList: PropTypes.array.isRequired,
+  setProducts: PropTypes.func.isRequired,
+  conditions: PropTypes.object.isRequired,
+  setConditions: PropTypes.func.isRequired,
 };
 
 export default Search;

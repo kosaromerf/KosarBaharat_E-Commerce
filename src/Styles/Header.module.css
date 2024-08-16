@@ -6,13 +6,11 @@
     z-index: 1;
     width: 100%;
     object-fit: cover;
-
 }
 
 .logo {
     display: none;
 }
-
 
 @media only screen and (min-width: 767px) {
     .main {
@@ -28,7 +26,6 @@
         height: 100%;
         width: auto;
         margin-left: 1rem;
-
         --b: 3px;
         --c: #ff000099;
         --w: 30%;
@@ -38,6 +35,5 @@
         background:
             conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 / var(--_p),
             conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g)) 100% 100% / var(--_p);
-
     }
 }

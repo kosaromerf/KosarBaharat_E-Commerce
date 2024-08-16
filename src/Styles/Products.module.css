@@ -12,6 +12,7 @@
 
 
 @media only screen and (min-width: 767px) {
+
     .container {
         width: 67vw;
         margin-left: 31vw;
@@ -30,6 +31,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
+
     .container {
         width: 77vw;
         margin-left: 21vw;
@@ -38,15 +40,16 @@
 }
 
 @media only screen and (min-width: 1400px) {
+
     .container {
         width: 80vw;
         margin-left: 18vw;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
-
 }
 
 @media only screen and (min-width: 1915px) {
+
     .container {
         width: 82vw;
         margin-left: 16vw;
