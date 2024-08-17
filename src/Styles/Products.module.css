@@ -2,12 +2,12 @@
     width: 90vw;
     height: 80vh;
     overflow: scroll;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2% 2%;
     border: 2px solid #80808011;
-    padding: 1% 1%
+    padding: 1% 1%;
 }
 
 
@@ -17,6 +17,8 @@
         width: 67vw;
         margin-left: 31vw;
         align-self: flex-start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 

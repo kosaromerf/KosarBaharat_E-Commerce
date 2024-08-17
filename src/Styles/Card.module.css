@@ -1,6 +1,6 @@
 .cardContainer {
     height: 38vh;
-    width: 100%;
+    width: 49%;
     max-height: 300px;
     display: flex;
     border: 2px solid #eeeeee22;
@@ -114,4 +114,12 @@
     color: white;
     border: 0;
     margin-top: 5%
+}
+
+
+@media only screen and (min-width: 767px) {
+
+    .cardContainer {
+        width: 100%;
+    }
 }
