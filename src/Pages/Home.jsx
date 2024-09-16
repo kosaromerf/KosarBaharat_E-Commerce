@@ -27,7 +27,11 @@ const Home = () => {
           Browse our curated collection and rediscover the magic in your
           kitchen.
         </p>
-        <Link className={styles.cta} to="/shop">
+        <Link
+          className={styles.cta}
+          to="/shop"
+          aria-label="Link to navigate to Shop page"
+        >
           Take a Look
         </Link>
       </section>

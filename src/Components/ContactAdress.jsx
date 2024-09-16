@@ -26,6 +26,7 @@ const ContactAdress = ({ label, info, icon, clipBoard }) => {
           <button
             className={styles.clipBoardBtn}
             onClick={() => addClipboard(info)}
+            aria-label="Copies the email or phone number to your clipboard"
           >
             <MdOutlineContentCopy className={styles.clipBoard} />
           </button>

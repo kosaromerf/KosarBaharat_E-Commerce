@@ -370,8 +370,8 @@ const Filter = ({ sortProducts }) => {
           </li>
         </ul>
 
-        <ul className={styles.bigFilter}>
-          <div className={styles.container}>
+        <div className={styles.bigFilter}>
+          <ul className={styles.container}>
             <li onClick={() => setFilterMenu}>
               <div
                 className={styles.subLabel}
@@ -559,14 +559,14 @@ const Filter = ({ sortProducts }) => {
                 </label>
               </div>
             </li>
-          </div>
+          </ul>
           <button
             className={styles.filterActionBtn}
             onClick={() => sortAndFilter(sortMethod)}
           >
             Filter
           </button>
-        </ul>
+        </div>
       </div>
     </nav>
   );

@@ -4,21 +4,23 @@ import PropTypes from "prop-types";
 
 const ContactTime = ({ label, weekdays, saturday, sunday }) => {
   return (
-    <ul className={styles.list}>
+    <div>
       <p className={styles.label}>{label}</p>
-      <li className={styles.item}>
-        <span>Weekdays : </span>
-        <span>{weekdays}</span>
-      </li>
-      <li className={styles.item}>
-        <span>Saturday : </span>
-        <span>{saturday}</span>
-      </li>
-      <li className={styles.item}>
-        <span>Sunday : </span>
-        <span>{sunday}</span>
-      </li>
-    </ul>
+      <ul className={styles.list}>
+        <li className={styles.item}>
+          <span>Weekdays : </span>
+          <span>{weekdays}</span>
+        </li>
+        <li className={styles.item}>
+          <span>Saturday : </span>
+          <span>{saturday}</span>
+        </li>
+        <li className={styles.item}>
+          <span>Sunday : </span>
+          <span>{sunday}</span>
+        </li>
+      </ul>
+    </div>
   );
 };
 

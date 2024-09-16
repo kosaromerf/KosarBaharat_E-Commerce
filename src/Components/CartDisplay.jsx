@@ -29,7 +29,11 @@ const CartDisplay = ({ inCart, setInCart }) => {
           {e.price * e.amount}
           <span>&#8378;</span>
         </p>
-        <button onClick={() => deleteItem(e)} className={styles.deleteBtn}>
+        <button
+          onClick={() => deleteItem(e)}
+          className={styles.deleteBtn}
+          aria-label="Button for removing item from cart"
+        >
           <MdDeleteForever />
         </button>
       </div>

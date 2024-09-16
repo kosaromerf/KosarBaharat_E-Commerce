@@ -39,7 +39,11 @@ const Cart = () => {
           {e.price * e.amount}
           <span>&#8378;</span>
         </p>
-        <button onClick={() => deleteItem(e)} className={styles.deleteBtn}>
+        <button
+          onClick={() => deleteItem(e)}
+          className={styles.deleteBtn}
+          aria-label="Remove item from the cat"
+        >
           <MdDeleteForever />
         </button>
       </div>
@@ -148,7 +152,12 @@ const Cart = () => {
             Total: <span>{total}&#8378;</span>
           </p>
         </div>
-        <Link className={styles.orderBtn} to="/shop" onClick={order}>
+        <Link
+          className={styles.orderBtn}
+          to="/shop"
+          onClick={order}
+          aria-label="Complate the order and return to Shop page"
+        >
           Order
         </Link>
       </div>
